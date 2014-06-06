@@ -6,9 +6,10 @@
   .task-header
     %h2.task-header-name
       Todo
-    = link_to '#', class: 'task-header-add-icon', data: { :toggle => "modal", :target => "#new_task_modal" } do
+    = link_to new_task_path,
+              remote: true,
+              class: 'task-header-add-icon',
+              data: { :toggle => "modal", :target => "#new_task_modal" } do
       %span.glyphicon.glyphicon-plus
   .task-cards
     = render @tasks
-
-= render 'task_modal_form'

@@ -6,6 +6,13 @@ class TasksController < ApplicationController
   def show
   end
 
+  def new
+    @task = Task.new
+    respond_to do |format|
+      format.js
+    end
+  end
+
   def create
     @task = Task.new task_params
 
