@@ -1,0 +1,14 @@
+%h1 My Task Board
+
+.clearfix
+
+.tasks
+  .task-header
+    %h2.task-header-name
+      Todo
+    = link_to '#', class: 'task-header-add-icon', data: { :toggle => "modal", :target => "#new_task_modal" } do
+      %span.glyphicon.glyphicon-plus
+  .task-cards
+    = render @tasks
+
+= render 'task_modal_form'
