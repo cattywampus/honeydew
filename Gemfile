@@ -46,5 +46,7 @@ gem 'elasticsearch-rails'
 gem 'simple_form', github: 'plataformatec/simple_form'
 
 group :development do
+  gem 'better_errors'
+  gem 'binding_of_caller'
   gem 'quiet_assets'
 end
