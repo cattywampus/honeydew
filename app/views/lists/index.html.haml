@@ -1,0 +1,13 @@
+%h1
+  My Task Board
+  %small.pull-right
+    = link_to new_list_path,
+              remote: true,
+              class: 'btn btn-lg btn-primary',
+              data: { :toggle => "modal", :target => "#new_task_modal" } do
+      %span.glyphicon.glyphicon-plus
+
+.clearfix
+
+.lists
+  = render @lists
