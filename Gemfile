@@ -48,5 +48,18 @@ gem 'simple_form', github: 'plataformatec/simple_form'
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
+  gem 'guard-rails'
+  gem 'guard-rspec'
   gem 'quiet_assets'
+end
+
+group :development, :test do
+  gem 'fabrication'
+  gem 'konacha'
+  gem 'rspec-rails', '~> 3.0'
+end
+
+group :test do
+  gem 'capybara'
+  gem 'shoulda-matchers'
 end

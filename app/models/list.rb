@@ -1,5 +1,5 @@
 class List < ActiveRecord::Base
   has_many :tasks
-  
-  validate :name, presence: true
+
+  validates :name, presence: true
 end
