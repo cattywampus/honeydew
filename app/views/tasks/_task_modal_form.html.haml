@@ -4,8 +4,9 @@
       .modal-header
         %h4.modal-title Hello, modal!
 
-      = simple_form_for Task.new, wrapper: :horizontal_form, remote: true, html: { class: 'form-horizontal' } do |f|
+      = simple_form_for task, wrapper: :horizontal_form, remote: true, html: { class: 'form-horizontal' } do |f|
         .modal-body
+          = f.input :list_id, as: :hidden
           = f.input :title
           = f.input :description
 

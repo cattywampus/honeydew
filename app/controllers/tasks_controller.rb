@@ -7,7 +7,9 @@ class TasksController < ApplicationController
   end
 
   def new
-    @task = Task.new
+    @list = List.find params[:list_id]
+    @task = @list.tasks.build
+
     respond_to do |format|
       format.js
     end
@@ -19,6 +21,8 @@ class TasksController < ApplicationController
     respond_to do |format|
       if @task.save
         format.js
+      else
+        format.js { render :error }
       end
     end
   end
@@ -26,6 +30,6 @@ class TasksController < ApplicationController
   private
 
   def task_params
-    params.require(:task).permit(:title, :description)
+    params.require(:task).permit(:title, :description, :list_id)
   end
 end

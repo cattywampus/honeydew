@@ -1,2 +1,6 @@
-$("body").append("#{j render 'task_modal_form', task: @task}");
-$(".modal").modal();
+:plain
+  $("body").append("#{j render 'task_modal_form', task: @task}");
+  $(".modal").modal();
+  $(".modal").on("hidden.bs.modal", function(e) {
+    $(this).remove();
+  });

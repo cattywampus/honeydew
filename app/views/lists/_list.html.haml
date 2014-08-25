@@ -5,7 +5,7 @@
   .list-cards
     = render list.tasks
   = link_to 'Add a task...',
-            new_task_path,
+            new_list_task_path(list),
             class: 'add-task-link',
             remote: true,
             data: { toggle: 'modal', target: '#new_task_modal' }

@@ -16,6 +16,8 @@ class ListsController < ApplicationController
     respond_to do |format|
       if @list.save
         format.js
+      else
+        format.js { render :error }
       end
     end
   end

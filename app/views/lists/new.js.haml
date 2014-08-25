@@ -1,2 +1,6 @@
-$("body").append("#{j render 'list_modal_form', list: @list}");
-$(".modal").modal();
+:plain
+  $("body").append("#{j render 'list_modal_form', list: @list }");
+  $(".modal").modal();
+  $(".modal").on("hidden.bs.modal", function(e) {
+    $(this).remove();
+  });
